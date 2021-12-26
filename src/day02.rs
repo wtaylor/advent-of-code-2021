@@ -1,4 +1,4 @@
-pub fn part1(input: String) {
+pub fn part_1(input: String) {
     let input = parse_input(&input);
 
     let translations = input.iter()
@@ -17,7 +17,7 @@ pub fn part1(input: String) {
              final_location.0 * final_location.1);
 }
 
-pub fn part2(input: String) {
+pub fn part_2(input: String) {
     let input = parse_input(&input);
 
     let operations: Vec<Box<dyn Fn((i32, i32, i32)) -> (i32, i32, i32)>> = input.iter()

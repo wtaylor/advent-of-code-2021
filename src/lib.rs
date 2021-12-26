@@ -9,10 +9,10 @@ pub type DayFn = fn(String);
 
 pub fn get_day(day: u8) -> (DayFn, DayFn) {
     return match day {
-        1 => (day01::part1, day01::part2),
-        2 => (day02::part1, day02::part2),
-        3 => (day03::part1, noop),
-        6 => (day06::part1, day06::part2),
+        1 => (day01::part_1, day01::part_2),
+        2 => (day02::part_1, day02::part_2),
+        3 => (day03::part_1, noop),
+        6 => (day06::part_1, day06::part_2),
         _ => {
             println!("Unknown day: {}", day);
             return (noop, noop);

@@ -1,6 +1,6 @@
 use std::ops::Add;
 
-pub fn part1(input: String) {
+pub fn part_1(input: String) {
     let input = input.lines()
         .map(|l| l.chars().map(|c| c.to_digit(2).unwrap()).collect())
         .collect::<Vec<Vec<u32>>>();

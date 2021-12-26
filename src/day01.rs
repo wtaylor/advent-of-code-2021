@@ -1,4 +1,4 @@
-pub fn part1(input: String) {
+pub fn part_1(input: String) {
     let input = input.lines().map(|l| l.parse().unwrap()).collect::<Vec<i32>>();
 
     let increase_count = input.iter()
@@ -8,7 +8,7 @@ pub fn part1(input: String) {
     println!("Total Increases: {}", increase_count);
 }
 
-pub fn part2(input: String) {
+pub fn part_2(input: String) {
     let input = input.lines().map(|l| l.parse().unwrap()).collect::<Vec<i32>>();
 
     let window_totals = (0..input.len()-2)

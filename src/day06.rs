@@ -1,4 +1,4 @@
-pub fn part1(input: String) {
+pub fn part_1(input: String) {
     let input = input.trim().split(',').map(|l| l.parse().unwrap()).collect::<Vec<i8>>();
     let day_indexed_input= index_input(&input);
 
@@ -7,7 +7,7 @@ pub fn part1(input: String) {
     println!("Total Fish: {}", simulation_result.iter().sum::<u64>());
 }
 
-pub fn part2(input: String) {
+pub fn part_2(input: String) {
     let input = input.trim().split(',').map(|l| l.parse().unwrap()).collect::<Vec<i8>>();
     let day_indexed_map= index_input(&input);
 
