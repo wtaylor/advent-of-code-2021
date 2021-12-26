@@ -1,5 +1,9 @@
+fn parse_input(input: &str) -> Vec<i32> {
+    input.lines().map(|l| l.parse().unwrap()).collect::<Vec<i32>>()
+}
+
 pub fn part_1(input: String) {
-    let input = input.lines().map(|l| l.parse().unwrap()).collect::<Vec<i32>>();
+    let input = parse_input(&input);
 
     let increase_count = input.iter()
         .zip(&input[1..])
@@ -9,7 +13,7 @@ pub fn part_1(input: String) {
 }
 
 pub fn part_2(input: String) {
-    let input = input.lines().map(|l| l.parse().unwrap()).collect::<Vec<i32>>();
+    let input = parse_input(&input);
 
     let window_totals = (0..input.len()-2)
         .map(|i| &input[i..i+3])

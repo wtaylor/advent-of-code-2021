@@ -1,19 +1,5 @@
-pub fn part_1(input: String) {
-    let input = input.trim().split(',').map(|l| l.parse().unwrap()).collect::<Vec<i8>>();
-    let day_indexed_input= index_input(&input);
-
-    let simulation_result = simulation(&day_indexed_input, 80);
-
-    println!("Total Fish: {}", simulation_result.iter().sum::<u64>());
-}
-
-pub fn part_2(input: String) {
-    let input = input.trim().split(',').map(|l| l.parse().unwrap()).collect::<Vec<i8>>();
-    let day_indexed_map= index_input(&input);
-
-    let simulation_result = simulation(&day_indexed_map, 256);
-
-    println!("Total Fish: {}", simulation_result.iter().sum::<u64>());
+fn parse_input(input: &str) -> Vec<i8> {
+    input.trim().split(',').map(|l| l.parse().unwrap()).collect::<Vec<i8>>()
 }
 
 fn index_input(input: &Vec<i8>) -> Vec<u64> {
@@ -40,4 +26,22 @@ fn simulate_day(start_of_day_state: &Vec<u64>) -> Vec<u64> {
     end_of_day_state[6] = end_of_day_state[6] + spawned_fish;
 
     end_of_day_state
+}
+
+pub fn part_1(input: String) {
+    let input = parse_input(&input);
+    let day_indexed_input= index_input(&input);
+
+    let simulation_result = simulation(&day_indexed_input, 80);
+
+    println!("Total Fish: {}", simulation_result.iter().sum::<u64>());
+}
+
+pub fn part_2(input: String) {
+    let input = parse_input(&input);
+    let day_indexed_map= index_input(&input);
+
+    let simulation_result = simulation(&day_indexed_map, 256);
+
+    println!("Total Fish: {}", simulation_result.iter().sum::<u64>());
 }

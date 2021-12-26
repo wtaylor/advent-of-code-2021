@@ -1,3 +1,10 @@
+fn parse_input(input: &str) -> Vec<(&str, i32)> {
+    input.lines()
+        .map(|l| l.split(" ").collect::<Vec<&str>>())
+        .map(|p| (p[0], p[1].parse::<i32>().unwrap()))
+        .collect::<Vec<(&str, i32)>>()
+}
+
 pub fn part_1(input: String) {
     let input = parse_input(&input);
 
@@ -35,11 +42,3 @@ pub fn part_2(input: String) {
              final_state.1,
              final_state.0 * final_state.1);
 }
-
-fn parse_input(input: &str) -> Vec<(&str, i32)> {
-    input.lines()
-        .map(|l| l.split(" ").collect::<Vec<&str>>())
-        .map(|p| (p[0], p[1].parse::<i32>().unwrap()))
-        .collect::<Vec<(&str, i32)>>()
-}
-

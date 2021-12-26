@@ -1,9 +1,13 @@
 use std::ops::Add;
 
-pub fn part_1(input: String) {
-    let input = input.lines()
+fn parse_input(input: &str) -> Vec<Vec<u32>> {
+    input.lines()
         .map(|l| l.chars().map(|c| c.to_digit(2).unwrap()).collect())
-        .collect::<Vec<Vec<u32>>>();
+        .collect()
+}
+
+pub fn part_1(input: String) {
+    let input = parse_input(&input);
 
     let totals = input.iter()
         .fold(
